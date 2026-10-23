@@ -103,20 +103,20 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
   return (
     <div className="space-y-6 pb-20 max-w-4xl mx-auto">
       {/* Title header */}
-      <div className="bg-gradient-to-r from-rose-600 to-amber-600 rounded-2xl p-6 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="bg-gradient-to-r from-pink-800 via-pink-700 to-rose-700 rounded-3xl p-6 text-white shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-pink-400/30">
         <div>
           <div className="inline-flex items-center gap-1.5 bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2">
-            <Wand2 className="w-3.5 h-3.5" />
+            <Wand2 className="w-3.5 h-3.5 text-pink-200" />
             <span>Ateliê Personalizado</span>
           </div>
           <h1 className="font-serif text-2xl sm:text-3xl font-bold">Monte Seu Bolo dos Sonhos</h1>
-          <p className="text-rose-100 text-xs sm:text-sm mt-1">
+          <p className="text-pink-100 text-xs sm:text-sm mt-1">
             Escolha o tamanho, massa favorita, recheios duplos e decoração personalizada.
           </p>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 text-right shrink-0">
-          <span className="text-[11px] text-rose-100 block">Total Estimado</span>
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3 text-right shrink-0">
+          <span className="text-[11px] text-pink-100 block">Total Estimado</span>
           <span className="font-serif text-2xl font-black text-amber-300">
             R$ {totalPrice.toFixed(2)}
           </span>
@@ -125,9 +125,9 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
 
       <div className="space-y-6">
         {/* Step 1: Size */}
-        <section className="bg-white rounded-2xl border border-rose-100 p-5 space-y-3 shadow-xs">
-          <div className="flex items-center gap-2 text-rose-600 font-bold text-sm">
-            <span className="w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-xs">1</span>
+        <section className="bg-white rounded-3xl border border-pink-200/90 p-5 space-y-3 shadow-xs">
+          <div className="flex items-center gap-2 text-pink-700 font-bold text-sm">
+            <span className="w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-xs">1</span>
             <h3>Escolha o Tamanho do Bolo</h3>
           </div>
 
@@ -138,15 +138,15 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
                 <div
                   key={size.id}
                   onClick={() => setSelectedSizeId(size.id)}
-                  className={`p-3.5 rounded-xl border-2 transition-all cursor-pointer flex items-center justify-between ${
+                  className={`p-3.5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between ${
                     isSelected
-                      ? 'border-rose-600 bg-rose-50/50 shadow-sm'
-                      : 'border-slate-100 bg-white hover:border-rose-200'
+                      ? 'border-pink-600 bg-pink-50/80 shadow-xs'
+                      : 'border-slate-100 bg-white hover:border-pink-200'
                   }`}
                 >
                   <div className="space-y-0.5">
-                    <div className="font-semibold text-xs sm:text-sm text-slate-900">{size.name}</div>
-                    <div className="text-xs text-rose-600 font-medium">{size.slices} · {size.weight}</div>
+                    <div className="font-semibold text-xs sm:text-sm text-pink-950">{size.name}</div>
+                    <div className="text-xs text-pink-600 font-medium">{size.slices} · {size.weight}</div>
                   </div>
                   <div className="font-serif font-bold text-sm text-slate-800">
                     R$ {size.basePrice.toFixed(2)}
@@ -354,7 +354,7 @@ export const CustomCakeBuilder: React.FC<CustomCakeBuilderProps> = ({
 
           <button
             onClick={handleFinishCustomCake}
-            className="w-full bg-rose-600 hover:bg-rose-500 active:scale-95 text-white font-bold py-3.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30 transition-all cursor-pointer"
+            className="w-full bg-pink-600 hover:bg-pink-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-pink-600/30 transition-all cursor-pointer"
           >
             <ShoppingBag className="w-4 h-4" />
             <span>Adicionar Bolo Personalizado ao Carrinho (R$ {totalPrice.toFixed(2)})</span>

@@ -17,12 +17,14 @@ import { CakeItem, CategoryType } from '../types';
 import { CAKE_ITEMS } from '../data/cakes';
 
 interface CakeCatalogProps {
+  products?: CakeItem[];
   onAddToCart: (item: CakeItem, quantity?: number) => void;
   onOpenCustomBuilder: () => void;
   onOpenCalculator: () => void;
 }
 
 export const CakeCatalog: React.FC<CakeCatalogProps> = ({
+  products = CAKE_ITEMS,
   onAddToCart,
   onOpenCustomBuilder,
   onOpenCalculator,
@@ -41,7 +43,9 @@ export const CakeCatalog: React.FC<CakeCatalogProps> = ({
     { id: 'especiais', label: 'Especiais do Ateliê', icon: '✨' },
   ];
 
-  const filteredCakes = CAKE_ITEMS.filter(cake => {
+  const sourceProducts = products && products.length > 0 ? products : CAKE_ITEMS;
+
+  const filteredCakes = sourceProducts.filter(cake => {
     const matchesCategory = selectedCategory === 'todos' || cake.category === selectedCategory;
     const q = searchQuery.toLowerCase();
     const matchesSearch = 

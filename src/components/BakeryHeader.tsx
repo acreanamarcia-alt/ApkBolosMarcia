@@ -8,7 +8,8 @@ import {
   Calculator, 
   HeartHandshake, 
   Wand2, 
-  MapPin 
+  MapPin,
+  ShieldCheck
 } from 'lucide-react';
 import { ActiveTab, CartItem } from '../types';
 
@@ -80,6 +81,7 @@ export const BakeryHeader: React.FC<BakeryHeaderProps> = ({
             { id: 'personalizar', label: 'Monte Seu Bolo', icon: <Wand2 className="w-4 h-4" /> },
             { id: 'calculadora', label: 'Calculadora de Festa', icon: <Calculator className="w-4 h-4" /> },
             { id: 'sobre', label: 'O Ateliê', icon: <HeartHandshake className="w-4 h-4" /> },
+            { id: 'admin', label: 'Painel Admin', icon: <ShieldCheck className="w-4 h-4" /> },
           ].map(tab => {
             const isActive = activeTab === tab.id;
             return (

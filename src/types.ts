@@ -1,6 +1,6 @@
 export type CategoryType = 'todos' | 'festas' | 'caseiros' | 'potes' | 'tortas' | 'especiais';
 
-export type ActiveTab = 'catalogo' | 'personalizar' | 'calculadora' | 'carrinho' | 'sobre' | 'dev-tools';
+export type ActiveTab = 'catalogo' | 'personalizar' | 'calculadora' | 'carrinho' | 'sobre' | 'dev-tools' | 'admin';
 
 export interface CakeItem {
   id: string;

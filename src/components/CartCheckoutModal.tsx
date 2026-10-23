@@ -130,9 +130,9 @@ export const CartCheckoutModal: React.FC<CartCheckoutModalProps> = ({
     <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
       <div className="bg-white rounded-3xl max-w-2xl w-full my-auto shadow-2xl border border-rose-100 flex flex-col max-h-[92vh] overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-rose-600 to-amber-600 text-white p-4 sm:p-5 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-pink-700 to-rose-600 text-white p-4 sm:p-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ShoppingBag className="w-5 h-5 text-amber-300" />
+            <ShoppingBag className="w-5 h-5 text-pink-200" />
             <h2 className="font-serif font-bold text-lg sm:text-xl">Sua Sacola de Encomendas</h2>
           </div>
           <button

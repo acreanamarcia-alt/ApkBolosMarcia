@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Artisanal cake or bakery product item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique product identifier" },
+        "name": { "type": "string", "description": "Product display name" },
+        "category": { "type": "string", "description": "Category slug (festas, caseiros, potes, tortas, especiais)" },
+        "price": { "type": "number", "description": "Current sale price in BRL" },
+        "description": { "type": "string", "description": "Detailed description of cake dough and fillings" },
+        "slices": { "type": "string", "description": "Serving size or slice count" },
+        "weight": { "type": "string", "description": "Weight specification" },
+        "image": { "type": "string", "description": "Public image URL" },
+        "popular": { "type": "boolean", "description": "Flag for featured/best-seller items" },
+        "prepTime": { "type": "string", "description": "Estimated advance notice required" },
+        "updatedAt": { "type": "string", "description": "Timestamp of last modification" }
+      },
+      "required": ["id", "name", "category", "price", "image"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role-based permissions",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "role": { "type": "string", "enum": ["admin", "moderator", "customer"], "description": "Access level" },
+        "displayName": { "type": "string", "description": "User name" },
+        "createdAt": { "type": "string", "description": "Account creation timestamp" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer cake order log",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Order ID" },
+        "customerName": { "type": "string", "description": "Name of customer" },
+        "total": { "type": "number", "description": "Total order amount" },
+        "status": { "type": "string", "description": "Order status (pending, confirmed, delivered)" },
+        "createdAt": { "type": "string", "description": "Order placement timestamp" }
+      },
+      "required": ["id", "customerName", "total"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Public catalog of bakery products, manageable by admins"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profiles and role management"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Orders log for business tracking"
+    }
+  }
+}
