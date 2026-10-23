@@ -1,0 +1,6 @@
+{
+  "name": "BolosMarciaApk",
+  "description": "Aplicativo oficial Bolos Márcia - Cardápio de bolos artesanais, personalizador de bolos de festa, calculadora de festa e encomendas via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
