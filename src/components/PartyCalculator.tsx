@@ -42,30 +42,30 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
   return (
     <div className="space-y-6 pb-20 max-w-3xl mx-auto">
       {/* Header */}
-      <div className="bg-gradient-to-r from-pink-800 via-pink-700 to-rose-700 rounded-3xl p-6 text-white shadow-xl border border-pink-400/30">
-        <div className="inline-flex items-center gap-1.5 bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 text-pink-100">
-          <Calculator className="w-3.5 h-3.5" />
+      <div className="bg-gradient-to-r from-[#2D3142] via-[#353A4E] to-[#2D3142] rounded-3xl p-6 text-white shadow-xl border border-[#FFD1E8]/30">
+        <div className="inline-flex items-center gap-1.5 bg-[#FFD1E8]/20 border border-[#FFD1E8]/30 px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 text-[#FFD1E8]">
+          <Calculator className="w-3.5 h-3.5 text-[#FF9DCB]" />
           <span>Calculadora Confeiteira</span>
         </div>
         <h1 className="font-serif text-2xl sm:text-3xl font-bold">Calculadora de Festa & Convidados</h1>
-        <p className="text-pink-100 text-xs sm:text-sm mt-1">
+        <p className="text-[#F7F7FF]/90 text-xs sm:text-sm mt-1">
           Descubra o tamanho exato do bolo para não sobrar nem faltar na sua festa em Rio Branco!
         </p>
       </div>
 
       {/* Guest Controls */}
-      <div className="bg-white rounded-3xl border border-pink-200/90 p-6 shadow-xs space-y-6">
-        <h3 className="font-serif font-bold text-lg text-pink-950">Quantos convidados na sua celebração?</h3>
+      <div className="bg-white rounded-3xl border border-[#FFD1E8] p-6 shadow-xs space-y-6">
+        <h3 className="font-serif font-bold text-lg text-[#2D3142]">Quantos convidados na sua celebração?</h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Adults */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm font-semibold text-slate-800">
+            <div className="flex items-center justify-between text-sm font-semibold text-[#2D3142]">
               <span className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-pink-600" />
+                <Users className="w-4 h-4 text-[#FF9DCB]" />
                 Adultos
               </span>
-              <span className="font-mono text-base text-pink-600 bg-pink-50 px-2.5 py-0.5 rounded-lg border border-pink-200">
+              <span className="font-mono font-bold text-base text-[#2D3142] bg-[#FFD1E8] px-2.5 py-0.5 rounded-lg border border-[#FF9DCB]">
                 {adults}
               </span>
             </div>
@@ -75,9 +75,9 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
               max="100"
               value={adults}
               onChange={(e) => setAdults(Number(e.target.value))}
-              className="w-full accent-pink-600 cursor-pointer"
+              className="w-full accent-[#FF9DCB] cursor-pointer"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono">
+            <div className="flex justify-between text-[11px] text-[#8E9AAF] font-mono">
               <span>2</span>
               <span>50</span>
               <span>100+</span>
@@ -86,12 +86,12 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
 
           {/* Children */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm font-semibold text-slate-800">
+            <div className="flex items-center justify-between text-sm font-semibold text-[#2D3142]">
               <span className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-pink-500" />
+                <Users className="w-4 h-4 text-[#C8B6FF]" />
                 Crianças (até 10 anos)
               </span>
-              <span className="font-mono text-base text-pink-500 bg-pink-50 px-2.5 py-0.5 rounded-lg border border-pink-200">
+              <span className="font-mono font-bold text-base text-[#2D3142] bg-[#FFD1E8] px-2.5 py-0.5 rounded-lg border border-[#FF9DCB]">
                 {children}
               </span>
             </div>
@@ -101,9 +101,9 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
               max="60"
               value={children}
               onChange={(e) => setChildren(Number(e.target.value))}
-              className="w-full accent-pink-500 cursor-pointer"
+              className="w-full accent-[#FF9DCB] cursor-pointer"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono">
+            <div className="flex justify-between text-[11px] text-[#8E9AAF] font-mono">
               <span>0</span>
               <span>30</span>
               <span>60</span>
@@ -115,36 +115,36 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
       {/* Results Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Cake Result Highlight Card */}
-        <div className="bg-gradient-to-br from-pink-50 to-pink-100/70 border-2 border-pink-300 rounded-3xl p-5 space-y-3 sm:col-span-2 shadow-xs">
-          <div className="flex items-center gap-2 text-pink-700 font-bold text-xs uppercase tracking-wider">
-            <Cake className="w-4 h-4" />
+        <div className="bg-[#F7F7FF] border-2 border-[#FFD1E8] rounded-3xl p-5 space-y-3 sm:col-span-2 shadow-xs">
+          <div className="flex items-center gap-2 text-[#2D3142] font-bold text-xs uppercase tracking-wider">
+            <Cake className="w-4 h-4 text-[#2D3142]" />
             <span>Recomendação de Bolo Márcia</span>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-            <div className="font-serif font-bold text-2xl sm:text-3xl text-pink-950">
+            <div className="font-serif font-bold text-2xl sm:text-3xl text-[#2D3142]">
               {cakeWeightKg} kg de Bolo
             </div>
-            <div className="text-sm font-semibold text-pink-700 bg-white/90 px-3 py-1 rounded-full border border-pink-300 inline-block shadow-xs">
+            <div className="text-sm font-bold text-[#2D3142] bg-[#FFD1E8] px-3 py-1 rounded-full border border-[#FF9DCB] inline-block shadow-xs">
               {totalSlices} fatias recomendadas
             </div>
           </div>
 
-          <div className="text-xs text-slate-700 bg-white/80 p-3 rounded-2xl border border-pink-200">
+          <div className="text-xs text-[#2D3142] bg-white p-3 rounded-2xl border border-[#FFD1E8]">
             <strong>Modelo ideal de forma:</strong> {recommendedSize}
           </div>
 
           <div className="pt-2 flex flex-wrap gap-2">
             <button
               onClick={onGoToCustomBuilder}
-              className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow-md shadow-pink-600/30 transition-all cursor-pointer"
+              className="bg-[#FF9DCB] hover:bg-[#FF85BE] text-[#2D3142] font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow-md shadow-[#FF9DCB]/30 transition-all cursor-pointer border border-[#FF9DCB]"
             >
               <span>Personalizar Este Bolo</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={onGoToCatalog}
-              className="bg-white hover:bg-pink-50 text-pink-700 border border-pink-200 font-semibold px-4 py-2 rounded-xl text-xs transition-colors"
+              className="bg-white hover:bg-[#FFD1E8]/40 text-[#2D3142] border border-[#FFD1E8] font-semibold px-4 py-2 rounded-xl text-xs transition-colors cursor-pointer"
             >
               Ver Bolos Prontos no Cardápio
             </button>
@@ -152,29 +152,29 @@ export const PartyCalculator: React.FC<PartyCalculatorProps> = ({
         </div>
 
         {/* Docinhos & Salgados */}
-        <div className="bg-white border border-rose-100 rounded-2xl p-5 space-y-2 shadow-xs">
-          <div className="flex items-center gap-2 text-slate-600 text-xs font-semibold">
-            <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>Docinhos Gourmet</span>
+        <div className="bg-white border border-[#FFD1E8] rounded-2xl p-5 space-y-2 shadow-xs">
+          <div className="flex items-center gap-2 text-[#8E9AAF] text-xs font-semibold">
+            <Sparkles className="w-4 h-4 text-[#FF9DCB]" />
+            <span className="text-[#2D3142]">Docinhos Gourmet</span>
           </div>
-          <div className="font-serif font-bold text-2xl text-slate-900">
+          <div className="font-serif font-bold text-2xl text-[#2D3142]">
             {docinhosCount} unidades
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#8E9AAF]">
             Brigadeiro, Ninho com Nutella e Beijinho de coco.
           </p>
         </div>
 
         {/* Bebidas */}
-        <div className="bg-white border border-rose-100 rounded-2xl p-5 space-y-2 shadow-xs">
-          <div className="flex items-center gap-2 text-slate-600 text-xs font-semibold">
-            <Wine className="w-4 h-4 text-cyan-500" />
-            <span>Bebidas & Refrigerantes</span>
+        <div className="bg-white border border-[#FFD1E8] rounded-2xl p-5 space-y-2 shadow-xs">
+          <div className="flex items-center gap-2 text-[#8E9AAF] text-xs font-semibold">
+            <Wine className="w-4 h-4 text-[#C8B6FF]" />
+            <span className="text-[#2D3142]">Bebidas & Refrigerantes</span>
           </div>
-          <div className="font-serif font-bold text-2xl text-slate-900">
+          <div className="font-serif font-bold text-2xl text-[#2D3142]">
             {drinksLiters} Litros
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#8E9AAF]">
             Calculado para refrigerantes, água e sucos naturais.
           </p>
         </div>

@@ -145,7 +145,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50/40 text-slate-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F7F7FF] text-[#2D3142] flex flex-col font-sans">
       {/* Top Header */}
       <BakeryHeader
         activeTab={activeTab}
