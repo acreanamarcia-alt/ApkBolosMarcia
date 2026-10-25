@@ -43,23 +43,31 @@ export const BakeryHeader: React.FC<BakeryHeaderProps> = ({
           <span className="hidden sm:inline text-[#2D3142] font-medium">WhatsApp: (68) 99912-3456</span>
           <button
             onClick={onInstallApk}
-            className="flex items-center gap-1 bg-white/70 hover:bg-white text-[#2D3142] px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase transition-colors shadow-xs border border-[#FF9DCB]"
+            className="flex items-center gap-1.5 bg-white hover:bg-[#F7F7FF] text-[#2D3142] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase transition-all shadow-xs border border-[#FF9DCB] cursor-pointer hover:scale-105 active:scale-95"
+            title="Instalar ícone na tela inicial do celular"
           >
-            <Download className="w-2.5 h-2.5" />
-            <span>Instalar APK</span>
+            <Download className="w-3 h-3 text-[#2D3142]" />
+            <span>Instalar no Celular</span>
           </button>
         </div>
       </div>
 
       {/* Main navigation header */}
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
-        {/* Logo & App Name */}
+        {/* Logo & App Name with Official App Icon */}
         <div 
           onClick={() => onSelectTab('catalogo')}
           className="flex items-center gap-2.5 cursor-pointer select-none group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF9DCB] to-[#FFD1E8] border border-[#FF9DCB] flex items-center justify-center text-[#2D3142] shadow-md shadow-[#FF9DCB]/40 group-hover:scale-105 transition-transform">
-            <Cake className="w-5 h-5 text-[#2D3142]" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF9DCB] to-[#FFD1E8] border border-[#FF9DCB] p-0.5 shadow-md shadow-[#FF9DCB]/40 group-hover:scale-105 transition-transform overflow-hidden flex items-center justify-center">
+            <img 
+              src="/pwa-192x192.png" 
+              alt="Logo Bolos Márcia" 
+              className="w-full h-full object-contain rounded-lg"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/icon.svg';
+              }}
+            />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
@@ -67,7 +75,7 @@ export const BakeryHeader: React.FC<BakeryHeaderProps> = ({
                 Bolos Márcia
               </span>
               <span className="bg-[#FFD1E8] text-[#2D3142] border border-[#FF9DCB] text-[10px] font-bold px-1.5 py-0.2 rounded font-mono uppercase tracking-wider">
-                APK
+                APP
               </span>
             </div>
             <p className="text-[11px] text-[#8E9AAF] font-medium">Doces & Bolos Artesanais</p>

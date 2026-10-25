@@ -12,6 +12,7 @@ import { AboutContact } from './components/AboutContact';
 import { AdminDashboard } from './components/AdminDashboard';
 import { CartCheckoutModal } from './components/CartCheckoutModal';
 import { InstallApkModal } from './components/InstallApkModal';
+import { PWAInstallButton } from './components/PWAInstallButton';
 import { BottomNavBar } from './components/BottomNavBar';
 import { Toast } from './components/Toast';
 import { ActiveTab, CakeItem, CartItem } from './types';
@@ -219,6 +220,12 @@ export default function App() {
         isOpen={isInstallModalOpen}
         onClose={() => setIsInstallModalOpen(false)}
         onNotify={notify}
+      />
+
+      {/* Floating PWA Install Card for Mobile with App Icon */}
+      <PWAInstallButton
+        variant="floating"
+        onOpenModal={() => setIsInstallModalOpen(true)}
       />
 
       {/* Floating Toast Notification */}
